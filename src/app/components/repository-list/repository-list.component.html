@@ -1,0 +1,28 @@
+<div class="repository-container">
+  <div class="user-info">
+    <img src="assets/images/avatar.jpg">
+    <h1>Bhavana Nangare</h1>
+    <p><i class="fas fa-map-marker-alt"></i>  Pune, Maharashtra</p>
+    <a href="https://github.com/akshunangare15" class="github-link">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+      <i class="fab fa-github"></i> akshunangare15
+    </a>
+  </div>
+  <div class="repository-list">
+    <div class="repository-item" *ngFor="let repository of paginatedRepositories">
+      <!-- Your existing repository item HTML here -->
+      <h2><a [href]="repository.html_url" target="_blank">{{ repository.name }}</a></h2>
+      <p>{{ repository.description }}</p>
+      <div class="project-details">
+        <p><strong>Skills:</strong> {{ repository.skills.join(', ') }}</p>
+      </div>
+    </div>
+  </div>
+
+
+ <!-- ... Your existing code ... -->
+
+<!-- Page number buttons with a square border -->
+<div class="page-buttons">
+  <button *ngFor="let page of totalPages" (click)="changePage(page)" class="page-button">{{ page }}</button>
+</div>
